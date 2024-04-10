@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="com.example.workteams.onboarding.WelcomeScreen"
+        android:label="fragment_welcome_screen"
+        tools:layout="@layout/fragment_welcome_screen" >
+        <action
+            android:id="@+id/action_welcomeScreen_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.workteams.authentication.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.workteams.authentication.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPassword"
+            app:destination="@id/forgotPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.example.workteams.verification.ForgotPassword"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPassword_to_OTPVerification"
+            app:destination="@id/OTPVerification" />
+    </fragment>
+    <fragment
+        android:id="@+id/OTPVerification"
+        android:name="com.example.workteams.verification.OTPVerification"
+        android:label="fragment_o_t_p_verification"
+        tools:layout="@layout/fragment_o_t_p_verification" >
+        <action
+            android:id="@+id/action_OTPVerification_to_createNewPassword"
+            app:destination="@id/createNewPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewPassword"
+        android:name="com.example.workteams.verification.CreateNewPassword"
+        android:label="fragment_create_new_password"
+        tools:layout="@layout/fragment_create_new_password" >
+        <action
+            android:id="@+id/action_createNewPassword_to_passwordChanged"
+            app:destination="@id/passwordChanged" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordChanged"
+        android:name="com.example.workteams.verification.PasswordChanged"
+        android:label="fragment_password_changed"
+        tools:layout="@layout/fragment_password_changed" >
+        <action
+            android:id="@+id/action_passwordChanged_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.workteams.onboarding.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_welcomeScreen"
+            app:destination="@id/welcomeScreen" />
+    </fragment>
+</navigation>
