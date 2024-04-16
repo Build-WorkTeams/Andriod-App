@@ -39,4 +39,6 @@
     <string name="work_teams">WorkTeams</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="sign_up_with_google">Sign up with Google</string>
+    <string name="username_tag">USERNAME</string>
+    <string name="token_tag">TOKEN</string>
 </resources>

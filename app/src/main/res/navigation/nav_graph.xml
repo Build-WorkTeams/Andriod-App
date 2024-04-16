@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashScreen">
+    app:startDestination="@id/welcomeScreen">
 
     <fragment
         android:id="@+id/welcomeScreen"
@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_welcomeScreen_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_welcomeScreen_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -70,14 +73,5 @@
         <action
             android:id="@+id/action_passwordChanged_to_loginFragment"
             app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/splashScreen"
-        android:name="com.example.workteams.onboarding.SplashScreen"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
-        <action
-            android:id="@+id/action_splashScreen_to_welcomeScreen"
-            app:destination="@id/welcomeScreen" />
     </fragment>
 </navigation>

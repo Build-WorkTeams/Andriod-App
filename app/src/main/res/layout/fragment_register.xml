@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="16dp"
     tools:context=".authentication.RegisterFragment">
 
@@ -40,6 +41,7 @@
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/email"
@@ -56,6 +58,7 @@
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password"
@@ -71,6 +74,7 @@
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirm_password_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/confirm_password"
@@ -80,6 +84,7 @@
 
 
         <Button
+            android:id="@+id/join_us_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -95,16 +100,18 @@
             android:text="@string/or_register_with" />
 
         <Button
+            android:id="@+id/sign_up_google_btn"
+            style="@style/CustomGoogleButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/CustomGoogleButtonStyle"
-            android:gravity="center"
             android:drawableLeft="@drawable/google_ic"
+            android:gravity="center"
             android:paddingStart="50dp"
             android:paddingEnd="50dp"
             android:text="@string/sign_up_with_google" />
     </LinearLayout>
+
 
     <TextView
         android:id="@+id/login_now"

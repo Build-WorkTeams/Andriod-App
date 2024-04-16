@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="16dp"
     tools:context=".authentication.LoginFragment">
 
@@ -41,6 +42,7 @@
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/enter_your_email"
@@ -59,6 +61,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/enter_your_password"
@@ -78,10 +81,11 @@
 
 
         <Button
+            android:id="@+id/login_btn"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/CustomButtonStyle"
             android:text="@string/login" />
 
         <TextView
@@ -93,18 +97,20 @@
             android:text="@string/or_login_with" />
 
         <Button
+            android:id="@+id/sign_in_google_btn"
+            style="@style/CustomGoogleButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/CustomGoogleButtonStyle"
-            android:gravity="center"
             android:drawableLeft="@drawable/google_ic"
-           android:paddingStart="50dp"
-           android:paddingEnd="50dp"
+            android:gravity="center"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
             android:text="@string/sign_in_with_google" />
 
 
     </LinearLayout>
+
 
     <TextView
         android:id="@+id/register_now"

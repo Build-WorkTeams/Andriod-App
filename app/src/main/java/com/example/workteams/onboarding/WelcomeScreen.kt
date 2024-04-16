@@ -2,21 +2,17 @@ package com.example.workteams.onboarding
 
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
-import com.example.workteams.MainActivity
 import com.example.workteams.R
 import com.example.workteams.databinding.FragmentWelcomeScreenBinding
 import com.example.workteams.onboarding.screens.FirstOBScreen
 import com.example.workteams.onboarding.screens.SecondOBScreen
 import com.example.workteams.onboarding.screens.ThirdOBScreen
-import me.relex.circleindicator.CircleIndicator
 
 
 class WelcomeScreen : Fragment() {
@@ -42,6 +38,7 @@ class WelcomeScreen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentWelcomeScreenBinding.inflate(inflater, container, false)
+
 
         /*
        List of Fragments to be
