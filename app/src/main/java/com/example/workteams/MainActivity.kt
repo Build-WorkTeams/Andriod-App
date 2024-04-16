@@ -31,10 +31,11 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, AuthActivity::class.java)
 //        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
 //        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-       intent.putExtra(
-            "navigateToLogin",
-            true
-        ) // Optional: Pass any data you need to the target Activity
+//       intent.putExtra(
+//            "navigateToLogin",
+//            true
+//        ) // Optional: Pass any data you need to the target Activity
+        GlobalVariables.isLogOutClicked = true
         startActivity(intent)
     }
 }

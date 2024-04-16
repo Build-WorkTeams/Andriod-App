@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.example.workteams.GlobalVariables
 import com.example.workteams.R
 import com.example.workteams.databinding.FragmentWelcomeScreenBinding
 import com.example.workteams.onboarding.screens.FirstOBScreen
@@ -38,6 +40,11 @@ class WelcomeScreen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentWelcomeScreenBinding.inflate(inflater, container, false)
+        val loggedOut = GlobalVariables.isLogOutClicked
+        if (loggedOut) {
+            GlobalVariables.isLogOutClicked = false
+            findNavController().navigate(R.id.action_welcomeScreen_to_loginFragment)
+        }
 
 
         /*
