@@ -9,9 +9,7 @@
         android:id="@+id/miPerson"
         android:icon="@drawable/ic_person"
         android:title="Person" />
-    <item
-        android:id="@+id/miplaceholder"
-        android:title="" />
+
     <item
         android:id="@+id/miCalendar"
         android:icon="@drawable/ic_calendar"

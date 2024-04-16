@@ -34,7 +34,6 @@ class AuthActivity : AppCompatActivity() {
 //        }
 
 
-
         setContentView(view)
 //        setContentView(R.layout.practice)
     }

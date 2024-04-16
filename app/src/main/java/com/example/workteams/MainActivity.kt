@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.bottomNavView.background = null
-        binding.bottomNavView.menu.getItem(2).isEnabled = false
+//        binding.bottomNavView.background = null
+//        binding.bottomNavView.menu.getItem(2).isEnabled = false
         setContentView(binding.root)
         // Set Username
         val username = SessionManager.getUsername(this)
