@@ -109,12 +109,14 @@ class RegisterFragment : Fragment() {
 
     private fun showLoading() {
 //        binding.prgbar.visibility = View.VISIBLE
-        loadingDialog.startLoadingDialog()
+//        loadingDialog.startLoadingDialog()
+        loadingDialog.show()
     }
 
     private fun stopLoading() {
 //        binding.prgbar.visibility = View.GONE
-        loadingDialog.dismissDialog()
+//        loadingDialog.dismissDialog()
+        loadingDialog.cancel()
     }
 
 

@@ -1,27 +1,57 @@
 package com.example.workteams
 
-import android.app.Activity
-import android.app.AlertDialog
 
-class LoadingDialog(
-    private var activity: Activity
-) {
+import android.app.Dialog
+import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.WindowManager
+import androidx.annotation.NonNull
 
-    private var myActivity: Activity = activity
-    private lateinit var dialog: AlertDialog
+class LoadingDialog @JvmOverloads constructor(
+    context: Context,
+    themeResId: Int = 0
+) : Dialog(context, themeResId) {
 
-
-    fun startLoadingDialog() {
-        val builder = AlertDialog.Builder(myActivity)
-        val inflater = myActivity.layoutInflater
-        builder.setView(inflater.inflate(R.layout.custom_loading, null))
-        builder.setCancelable(false)
-
-        dialog = builder.create()
-        dialog.show()
+    init {
+        val params = window?.attributes
+        params?.gravity = Gravity.CENTER
+        window?.attributes = params
+        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        setTitle(null)
+        setCancelable(false)
+        setOnCancelListener(null)
+        val view = LayoutInflater.from(context).inflate(R.layout.loading_layout, null)
+        setContentView(view)
     }
 
-    fun dismissDialog(){
-        dialog.dismiss()
-    }
+
 }
+
+
+//
+//class LoadingDialog(
+//    private var activity: Activity
+//) {
+//
+//    private var myActivity: Activity = activity
+//    private lateinit var dialog: AlertDialog
+//
+//
+//    fun startLoadingDialog() {
+//        val builder = AlertDialog.Builder(myActivity)
+//        val inflater = myActivity.layoutInflater
+//        builder.setView(inflater.inflate(R.layout.custom_loading, null))
+//        builder.setCancelable(false)
+//
+//        dialog = builder.create()
+//        dialog.show()
+//    }
+//
+//    fun dismissDialog(){
+//        dialog.dismiss()
+//    }
+//}
+
