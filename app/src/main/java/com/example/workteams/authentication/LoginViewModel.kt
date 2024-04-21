@@ -2,6 +2,7 @@ package com.example.workteams.authentication
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.workteams.repository.UserRepository
@@ -15,25 +16,27 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val userRepo by lazy {
         UserRepository()
     }
-    val loginResult: MutableLiveData<BaseResponse<LoginResponse>> = MutableLiveData()
+    private val _loginResult: MutableLiveData<BaseResponse<LoginResponse>> = MutableLiveData()
+    val loginResult: LiveData<BaseResponse<LoginResponse>> = _loginResult
 
     fun loginUser(email: String, password: String) {
-        loginResult.value = BaseResponse.Loading()
+//        loginResult.BaseResponse.Loading()
+        _loginResult.postValue(BaseResponse.Loading())
         viewModelScope.launch {
-            try {
-                val loginRequest = LoginRequest(email, password)
-                val response = userRepo.loginUser(loginRequest)
-                if (response.code() == 200) {
-                    loginResult.value = BaseResponse.Success(response.body())
-                } else {
-                    val errorMessage = response.errorBody()?.string() ?: "Unknown error"
-                    loginResult.value = BaseResponse.Error(errorMessage)
-//                    loginResult.value = BaseResponse.Error(response.message())
-                }
-            } catch (ex: Exception) {
-                loginResult.value = BaseResponse.Error(ex.message)
+            val loginRequest = LoginRequest(email, password)
+            val response = userRepo.loginUser(loginRequest)
+            if (response is BaseResponse.Success) {
+                _loginResult.postValue(response)
+            } else if (response is BaseResponse.Error) {
+                _loginResult.postValue(response)
             }
         }
     }
-
 }
+
+
+
+
+
+
+

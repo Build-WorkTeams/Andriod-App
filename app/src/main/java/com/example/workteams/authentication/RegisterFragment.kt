@@ -1,6 +1,5 @@
 package com.example.workteams.authentication
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
@@ -50,7 +49,7 @@ class RegisterFragment : Fragment() {
                 }
 
                 is BaseResponse.Error -> {
-                    processError(registerResponse.msg)
+                    processError(registerResponse.message)
                     stopLoading()
                 }
 
